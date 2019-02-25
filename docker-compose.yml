@@ -1,0 +1,9 @@
+version: '3'
+services:
+  sftp:
+    image: atmoz/sftp
+    volumes:
+      - ./src/test/resources/input:/home/foo/upload
+    ports:
+      - "2222:22"
+    command: admin:admin:1001

@@ -1,4 +1,4 @@
 logging:
   level:
     ROOT: INFO
-    org.apache.camel.*: DEBUG
+    org.apache.camel.*: INFO

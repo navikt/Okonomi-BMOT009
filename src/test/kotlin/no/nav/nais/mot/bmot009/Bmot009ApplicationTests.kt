@@ -13,8 +13,6 @@ class Bmot009ApplicationTests {
 
     @Before
     fun setup(){
-        val sftp = SFTPServerConfig().configure("127.0.0.1",4696, "input")
-        sftp.start()
     }
 
     @Test
