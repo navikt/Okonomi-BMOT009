@@ -7,11 +7,11 @@ import org.springframework.stereotype.Component
 class VaskelisteOsloKommuneRoute : SpringRouteBuilder() {
 
     override fun configure() {
-        from("sftp://admin@127.0.0.1:2222/input?move=arkiv&privateKeyFile=src/test/resources/ssh_client_rsa_test_key")
+        from("sftp://admin@127.0.0.1:2222/input?move=arkiv&privateKeyFile=src/test/resources/ssh_client_rsa_test_key&knownHostsFile=src/test/resources/known_hosts&strictHostKeyChecking=yes")
                 .log("after from:  ${body()}")
                 .process(SocialSecurityProcessor())
                 .log("after processing:  ${body()}")
-                .to("sftp://admin@127.0.0.1:2222/input/output?privateKeyFile=src/test/resources/ssh_client_rsa_test_key")
+                .to("sftp://admin@127.0.0.1:2222/input/output?privateKeyFile=src/test/resources/ssh_client_rsa_test_key&knownHostsFile=src/test/resources/known_hosts&strictHostKeyChecking=yes")
                 .end()
 
     }

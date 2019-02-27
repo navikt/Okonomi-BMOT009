@@ -5,6 +5,8 @@ services:
     volumes:
       - ./src/test/resources/input:/home/admin/input
       - ./src/test/resources/ssh_client_rsa_test_key.pub:/home/admin/.ssh/keys/id_rsa.pub:ro
+      - ./src/test/resources/ssh_client_rsa_test_key:/etc/ssh/ssh_host_rsa_key:ro
+
     ports:
       - "2222:22"
     command: admin::1001
