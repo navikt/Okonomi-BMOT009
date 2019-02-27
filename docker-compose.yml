@@ -3,7 +3,8 @@ services:
   sftp:
     image: atmoz/sftp
     volumes:
-      - ./src/test/resources/input:/home/foo/upload
+      - ./src/test/resources/input:/home/admin/input
+      - ./src/test/resources/ssh_client_rsa_test_key.pub:/home/admin/.ssh/keys/id_rsa.pub:ro
     ports:
       - "2222:22"
-    command: admin:admin:1001
+    command: admin::1001
